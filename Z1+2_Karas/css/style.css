@@ -1,0 +1,862 @@
+@font-face {
+    font-family: Audiowide ;
+    src: url(../Audiowide/Audiowide-Regular.ttf);
+}
+body {
+    font-family: Audiowide ;
+    margin: 0 auto;
+}
+.heading {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 35px;
+    color: black;
+}
+.navMenu {
+    background-color: black;
+    list-style: none;
+    padding: 0;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navMenu ul {
+    display: flex;
+    font-size: large;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+.navMenu ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
+
+}
+
+.navMenu ul li a{
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+}
+.navMenu ul li:hover{
+    background-color: white;
+}
+.navMenu ul li:hover a{
+    color: black;
+}
+
+@media screen and (max-width: 580px) {
+    .navMenu  ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    .navMenu ul li{
+        min-height: 0;
+        width: 100%;
+    }
+    .navMenu ul li a{
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+.subtitle{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.Me{
+    margin-right: 12%;
+    margin-left: 12%;
+}
+.Me img{
+    float: left;
+    border-radius: 2rem;
+    width: 30rem;
+    max-width: 100%;
+    height: auto;
+    margin-right: 2rem;
+    margin-top: 10px;
+    margin-bottom: 1rem;
+}
+.Me p{
+    text-align: justify;
+}
+.Me aside{
+    text-align: center;
+    float: right;
+    border-radius: 1.3rem;
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    margin-left: 1rem;
+    width: 14rem;
+}
+.Me div{
+    float: left;
+    background-color: black;
+    border-radius: 1.3rem;
+    color: white;
+    padding: 1rem;
+    margin-right: 1rem;
+    width: 16rem;
+}
+.Me div h3{
+    text-align: center;
+}
+.Me div ul{
+    text-align: left;
+}
+@media screen and (max-width: 600px) {
+    .Me aside {
+        width: auto;
+        float: unset;
+    }
+    .Me div{
+        float: unset;
+        width: auto;
+    }
+}
+
+.picture {
+    position: relative;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 10%;
+}
+.picture img{
+    position: relative;
+    border-radius: 3rem;
+    width: 100%;
+
+}
+.icon {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: 2px solid white;
+    background: black;
+}
+
+.tooltip{
+    position: absolute;
+    padding: 15px;
+    width: 5rem;
+    height:3rem;
+    background-color: white;
+    color: black;
+    border-radius: 40%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: center;
+}
+.tooltip h3{
+    margin: 0;
+    padding: 0;
+}
+.tooltip p {
+    margin: 0;
+    padding: 0;
+}
+.item:hover .tooltip{
+    display: block;
+}
+.one{
+    position: absolute;
+    top: 35%;
+    left: 30%;
+}
+.one .tooltip{
+    left: -300%;
+    top: 150%;
+}
+.two{
+    position: absolute;
+    top: 35%;
+    left: 65%;
+}
+.three{
+    position: absolute;
+    top: 60%;
+    left: 58%;
+}
+.three .tooltip{
+    left: -300%;
+    top: 150%;
+}
+.four{
+    position: absolute;
+    top: 35%;
+    left: 85%;
+}
+.four .tooltip{
+    left: -620%;
+    top: -150%;
+}
+.five {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+}
+.five .tooltip{
+    left: 150%;
+    top: -150%;
+}
+
+@media screen and (max-width: 500px) {
+    .tooltip {
+        padding: 15px;
+        width: 4rem;
+        height: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .picture {
+        margin-right: 8%;
+        margin-left: 8%;
+    }
+    .icon{
+        width:10px;
+        height: 10px;
+    }
+}
+.lecture{
+    display: flex;
+    flex-direction: column;
+    background-color: #a0d7a2;
+    border-radius: 2.5rem;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 5rem;
+    min-height: 6.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.practise{
+    display: flex;
+    flex-direction: column;
+    background-color: #BDD4E7;
+    border-radius: 2.5rem;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 5rem;
+    height: 6.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.two_hour{
+    max-width: 100%;
+}
+.one_hour{
+    max-width: 6rem;
+}
+.table_div{
+    overflow: auto;
+}
+.timetable{
+    border: 0;
+    border-spacing: 0;
+    margin-bottom: 7rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.info{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.empty{
+    height: 3rem;
+}
+.border_line_first{
+    background-color: darkgrey;
+    height: 5rem;
+}
+.border_line_last{
+    background-color: darkgrey;
+    height: 2rem;
+}
+.left{
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+.right{
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+td, th {
+    padding: 0;
+    text-align: center;
+}
+tr:nth-of-type(odd) {
+    background-color: #EFEFEF;
+}
+.cv{
+    box-sizing: border-box;
+    display: flex;
+    margin: 50px auto;
+    margin-top: 0;
+    max-width: 800px;
+
+}
+.cv h3{
+    padding: 5px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+.cv img{
+    display: block;
+    width: 200px;
+    height: auto;
+    border-radius: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+}
+.cv li{
+    list-style: none;
+    text-decoration: none;
+}
+.box_1{
+    background-color: #b7b7b7;
+    width: 40%;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+.box_2{
+    background-color: #e5e5e5;
+    width: 60%;
+    padding-bottom: 20px;
+    border-top-right-radius:3rem;
+    border-bottom-right-radius: 3rem;
+}
+.skill_div{
+    box-sizing: border-box;
+    display: flex;
+}
+.points{
+padding-left: 20px;
+}
+.full_point{
+    background-color: #67ee67;
+    border: 2px solid black;
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 6px;
+}
+.empty_point{
+    background-color: #ef4c4c;
+    border: 2px solid black;
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 6px;
+}
+.year_info{
+    font-size: 10px;
+    font-weight: lighter;
+}
+@media screen and (max-width: 900px) {
+    .cv{
+        width: 90%;
+        max-width: 600px;
+        margin: 2rem auto;
+        flex-direction: column;
+    }
+    .box_1{
+        width: 100%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+    }
+    .box_2{
+        width: 100%;
+        border-bottom-right-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+.err-msg {
+    color: darkred;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.default-hidden {
+    visibility: hidden;
+}
+
+form {
+    box-sizing: border-box;
+    max-width: 1000px;
+
+    padding: 2rem;
+    margin: 50px auto;
+    width: 85%;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,15%);
+    border: 4px solid hsl(0, 0%, 90%);
+    grid-template-columns: 60% 40%;
+    display: grid;
+    gap: 2rem;
+}
+.form_line{
+    display: flex;
+    align-content: center;
+    horiz-align: center;
+    width: auto;
+}
+.checkbox_options{
+    display: inline;
+    height: 100%;
+}
+.form_cell{
+    display: grid;
+    width: 50%;
+}
+form input{
+    border-width: 3px;
+    border-radius: 6px;
+    border-color: transparent;
+    margin-right: 10px;
+    height: 25px;
+    width: auto;
+    background-color: whitesmoke;
+}
+form select{
+    border-radius: 6px;
+    border-color: transparent;
+    margin-right: 10px;
+    height: 31px;
+    width: auto;
+    background-color: whitesmoke;
+}
+form label{
+    font-size: 15px;
+}
+.personal_info{
+    display: grid;
+    width: 100%;
+
+}
+.name_button{
+    width: 60%;
+    height: 78%;
+    margin: auto;
+    max-width: 200px;
+    border-radius: 18px;
+    border-color: transparent;
+    background-color: royalblue ;
+    color: white;
+}
+.extraservices{
+    display: flow;
+}
+.name_button:hover{
+    width: 63%;
+    height: 83%;
+    font-weight: bold;
+}
+.choosing_option{
+    width: 100%;
+}
+.choosing_option select{
+    width: 90%;
+    margin-top: 4px;
+    margin-bottom: 9px;
+}
+.choosing_second_atributes{
+    display: flex;
+    width: 95%;
+}
+.small_input{
+    height: 15px;
+    margin-left: 5px;
+    width: 60%;
+}
+.last_question {
+    background-color: whitesmoke;
+    border-radius: 6px;
+    border-color: transparent;
+}
+.price_submit{
+    margin-top: 30px;
+    max-width: 90%;
+    display: flex;
+    height: 50px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+.price{
+    width: 60%;
+}
+.final_price{
+    margin-top: 15px;
+    margin-left: 6px;
+    width: 100%;
+    height: 10px;
+}
+.submit{
+    margin: auto;
+    width: 40%;
+    height: 100%;
+}
+.submit button{
+    margin: 5px;
+    width: 90%;
+    height: 80%;
+    background-color: royalblue;
+    border-radius: 18px;
+    border-color: transparent;
+    color: white;
+}
+.submit button:hover{
+    margin: 3px;
+    width: 94%;
+    height: 88%;
+    font-weight: bold;
+}
+.first_question{
+    background-color: whitesmoke;
+    border-radius: 6px;
+    border-color: transparent;
+    width: 75%;
+    height: 100%;
+    padding: 0;
+    margin: auto;
+}
+.modal {
+    display: none;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal hr{
+    height: 3px;
+    color: whitesmoke;
+}
+
+.modalWindow {
+    background-color: #fefefe;
+    margin: auto;
+    margin-top: 20rem;
+    horiz-align: center;
+    padding: 20px;
+    border: 3px solid whitesmoke;
+    border-radius: 20px;
+    width: auto;
+    max-width: 500px;
+    display: block;
+}
+.modalWindow span{
+    color: #000;
+    font-size: large;
+}
+.modalClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.modalClose:hover,
+.modalClose:focus {
+    text-decoration: none;
+    cursor: default;
+}
+.modalButton{
+    background-color: royalblue;
+    color: #fefefe;
+    width: 150px;
+    font-size: 15px;
+    border-color: transparent;
+    border-radius: 20px;
+    padding: 6px;
+    margin: 3px;
+}
+.modalButton:hover{
+    font-size: 15px;
+    width: 156px;
+    font-weight: bold;
+    padding: 9px;
+    margin: 0;
+}
+
+@media screen and (max-width: 850px) {
+    form{
+        display: flow;
+    }
+    .form_line{
+        margin-bottom: 10px;
+    }
+    .extraservices{
+        display: flex;
+    }
+    .extraQuestion{
+        margin-left: 20px;
+        width: 50%;
+    }
+    .extraCheckboxes{
+        max-width: 210px;
+    }
+    .last_question{
+        height: 10em;
+        width: 100%;
+    }
+    .smaller_fixed{
+        height: 45px;
+        margin-bottom: 30px;
+    }
+    .modal {
+        height: 85rem;
+    }
+    .modalWindow {
+
+        margin-top: 35rem;
+        horiz-align: center;
+        padding: 20px;
+        width: auto;
+        max-width: 500px;
+        display: block;
+    }
+}
+@media screen and (max-width: 580px) {
+    form{
+        display: flow;
+    }
+    .form_line{
+        display: flow;
+        margin-bottom: 0;
+    }
+    .form_cell{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .name_button{
+        height: 90%;
+    }
+    .name_button:hover {
+        height: 95%;
+    }
+    .extraservices{
+        display: flow;
+    }
+    .extraQuestion{
+        margin-left: 0;
+        width: 100%;
+    }
+    .extraCheckboxes{
+        width: 100%;
+    }
+    .last_question{
+        height: 6em;
+        width: 100%;
+    }
+    .smaller_fixed{
+        height: 50px;
+        margin-bottom: 20px;
+        display: flex;
+    }
+    .mobile_next{
+        display: flex;
+    }
+    .modal {
+        height: 120rem;
+    }
+    .modalWindow {
+        margin-top: 55rem;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}
+@media screen and (max-width: 390px) {
+    button{
+        font-size: 11px;
+    }
+    .choosing_second_atributes{
+        display: flow;
+    }
+    .priceTag{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .priceTag{
+        font-size: 10px;
+    }
+}
+
+
+
+
+/* PREVZATÉ A UPRAVENÉ Z W3SCHOOLS */
+
+
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: grey;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 14px;
+    width: 14px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: royalblue;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 4px;
+    top: 2px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+/* Customize the label (the container) */
+.radio_label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: grey;
+}
+
+/* Hide the browser's default radio button */
+.radio_label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom radio button */
+.radio_mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio_label:hover input ~ .radio_mark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio_label input:checked ~ .radio_mark {
+    background-color: royalblue;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio_mark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio_label input:checked ~ .radio_mark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio_label .radio_mark:after {
+    top: 5px;
+    left: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+}
+

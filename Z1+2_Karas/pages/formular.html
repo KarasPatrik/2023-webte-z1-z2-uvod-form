@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Objednávka auta</title>
+</head>
+<body>
+<h1 class="heading">Patrik Karas</h1>
+<nav class="navMenu">
+    <ul>
+        <li>
+            <a href="../index.html">O mne</a>
+        </li>
+        <li>
+            <a href="index.html">Životopis</a>
+        </li>
+        <li>
+            <a href="timeTable.html">Môj rozvrh</a>
+        </li>
+        <li>
+            <a href="interactivePicture.html">Interaktívny obrázok</a>
+        </li>
+        <li>
+            <a href="formular.html">Formulár</a>
+        </li>
+    </ul>
+</nav>
+<h2 class="subtitle">OBJEDNÁVKOVÝ FORMULÁR</h2>
+<h3 class="subtitle">Záujem o auto</h3>
+<form action="https://form2mail.iolab.sk/form2mail.php" method="post" enctype="multipart/form-data" onsubmit="return(validateForm())">
+
+    <input type="hidden" name="apikey" value="9140eddd77179a8b06c0bcb1ea02df8e">
+
+    <input type="hidden" name="from" value="xkaras@stuba.sk">
+    <input type="hidden" name="sender" value="Patrik Karas">
+    <input type="hidden" name="to" value="feistu02@gmail.com">
+    <!-- Pri odovzdani nezabudnut zmenit mail na feistu... podla cviciaceho -->
+    <input type="hidden" name="subject" value="Formular WEBTE">
+    <input type="hidden" name="redirectOk" value="https://webte1.fei.stuba.sk/~xkaras/bsdcjhvamasdbmasdbasjfgdasndbashgvd/pages/success.html">
+    <input type="hidden" name="redirectFalse" value="https://webte1.fei.stuba.sk/~xkaras/bsdcjhvamasdbmasdbasjfgdasndbashgvd/pages/failure.html">
+    <div class="personal_info">
+        <div class="form_line">
+            <div class="form_cell">
+                <label for="firstname">Meno*:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="napr. Juraj" onfocusin="activateInputColor('firstname')"
+                        onblur="validateName('firstname', 'err-firstname')">
+                <span class="err-msg default-hidden" id="err-firstname">.</span>
+            </div>
+            <div class="form_cell">
+                <label for="surname">Priezvisko*:</label>
+                <input type="text" id="surname" name="surname" placeholder="napr. Valek" onfocusin="activateInputColor('surname')"
+                       onblur="validateName('surname', 'err-surname')">
+                <span class="err-msg default-hidden" id="err-surname">.</span>
+            </div>
+        </div>
+
+        <div class="form_line">
+            <div class="form_cell">
+                <label for="birthdate">Dátum narodenia*:</label>
+                <input type="date" id="birthdate" name="birthdate" onfocusin="activateInputColor('birthdate')"
+                onfocusout="deactivateInputColor('birthdate')" >
+                <span class="err-msg default-hidden" id="err-birthdate">.</span>
+            </div>
+            <div class="form_cell">
+                <label for="age">Vek*:</label>
+                <input type="number" id="age" name="age" disabled>
+                <input type="hidden" id="ageHidden" name="age" value="">
+                <span class="err-msg default-hidden" id="err-age">.</span>
+            </div>
+        </div>
+
+        <div class="form_line mobile_next">
+            <div class="form_cell">
+                <label id="gender" for="gender">Pohlavie*:</label>
+                <div>
+                    <label class="radio_label" for="gender_male" id="label_male">Muž
+                        <input type="radio" class="default_unchosen" name="gender" value="male" id="gender_male" onchange="validateGenderButton('gender_male')">
+                        <span class="radio_mark"></span>
+                    </label>
+                    <label class="radio_label" for="gender_female" id="label_female">Žena
+                        <input type="radio" class="default_unchosen" name="gender" value="female" id="gender_female" onchange="validateGenderButton('gender_female')">
+                        <span class="radio_mark"></span>
+                    </label>
+                    <label class="radio_label" for="gender_another" id="label_another">Iné
+                        <input type="radio" class="default_unchosen" name="gender" value="another" id="gender_another" onchange="validateGenderButton('gender_another')">
+                        <span class="radio_mark"></span>
+                    </label>
+                </div>
+                <span class="err-msg default-hidden" id="err-gender">.</span>
+            </div>
+
+            <div id="extra_genders" class="form_cell default-hidden">
+                <label for="another_genders">Existujúce pohlavia:</label>
+                <select name="another_genders" id="another_genders" onchange="hideError('err-gender')">
+                    <option value="" disabled selected>Nevybrané</option>
+                    <option name="gender-another" value="muž" id="gender_extra_male">Muž</option>
+                    <option name="gender-another" id=gender_extra_female">Žena</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form_line">
+            <div class="form_cell">
+                <label for="email">Email*:</label>
+                <input type="email" id="email" name="email" placeholder="napr. janko@gmail.com" onfocusin="activateInputColor('email')"
+                       onblur="validateEmail('email','err-email')">
+                <span class="err-msg default-hidden" id="err-email">.</span>
+            </div>
+            <div class="form_cell">
+                <label for="phone">Tel. Číslo*:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+421xxxxxxxxx" onfocusin="activateInputColor('phone')"
+                       onblur="validatePhone('phone','err-phone')">
+                <span class="err-msg default-hidden" id="err-phone">.</span>
+            </div>
+        </div>
+
+        <div class="form_line smaller_fixed">
+            <div class="form_cell">
+                <button class="name_button" type="button" id="button" onclick="validateButton()">Moje meno</button>
+            </div>
+            <div class="form_cell">
+                <textarea class="first_question" id="hiddenMessage" cols="15" rows="1" hidden>Patrik Karas</textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="order_info">
+        <label>Výber auta*:</label>
+        <div class="choosing_car_div">
+            <div class="choosing_option">
+                <select name="mark" id="mark" oninput="showSecondSelect()">
+                    <option value="none" disabled selected> Značka</option>
+                    <option value="alfa">Alfa Romeo</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="jeep">Jeep</option>
+                </select>
+            </div>
+            <div class="choosing_second_atributes">
+                <div id="model_div" class="default-hidden choosing_option">
+                    <select name="model" id="model" oninput="showThirdSelect()">
+                    </select>
+                </div>
+                <div id="engine_div" class="default-hidden choosing_option">
+                    <select name="engine" id="engine" oninput="showPrice()">
+                    </select>
+                </div>
+            </div>
+            <span class="err-msg default-hidden" id="err-car">.</span>
+        </div>
+        <div class="extraservices">
+            <div class="extraCheckboxes">
+                <label>Doplnkové služby:</label>
+                <div class="checkbox_options">
+                    <label class="container" for="leasing" id="leasing_label">Pomoc s financovaním vozidla
+                        <input type="checkbox" id="leasing" name="extraService1" value="leasing" onchange="validateExtraCheckbox('leasing','leasing_label')">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" for="sellIn" id="sellIn_label">Protihodnota starým vozidlo
+                        <input type="checkbox" id="sellIn" name="extraService2" value="sellIn" onchange="validateExtraCheckbox('sellIn','sellIn_label')">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" for="warranty" id="warranty_label">Predĺženie záruky
+                        <input type="checkbox" id="warranty" name="extraService3" value="warranty" onchange="validateExtraCheckbox('warranty','warranty_label')">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" for="customized" id="customized_label">Úprava interiéru na mieru
+                        <input type="checkbox" id="customized" name="extraService4" value="customized" onchange="validateExtraCheckbox('customized','customized_label')">
+                        <span class="checkmark"></span>
+                    </label>
+                    <div class="form_line mobile_next">
+                        <label class="container" for="else" id="else_label">Iné
+                            <input type="checkbox" id="else" value="else" onchange="validateExtraCheckbox('else','else_label')">
+                            <span class="checkmark"></span>
+                        </label>
+                        <input  class="small_input default-hidden" type="text" name="extraServiceCustom" id="extraElse" value="" placeholder="Napíš svoju požiadavku">
+                    </div>
+                </div>
+                <span class="err-msg default-hidden" id="err-extra">.</span>
+            </div>
+            <div class="extraQuestion">
+                <label for="question">Otázka na predajcu:</label>
+                <div>
+                    <textarea class="last_question" name="question" id="question" cols="25" rows="5" onkeyup=""></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="price_submit">
+            <div class="price">
+                <div class="final_price">
+                    <span class="default-hidden priceTag" id="price">Cena</span>
+                    <input type="hidden" id="priceToSend" name="price" value="">
+                </div>
+            </div>
+            <div class="submit">
+                <button type="button" onclick="tryToOpenModal()">Potvrď formulár</button>
+            </div>
+        </div>
+    </div>
+    <div id="Modal" class="modal">
+        <div class="modalWindow">
+            <span class="modalClose">&times;</span>
+            <span id="modalName"></span> <hr>
+            <span id="modalSurname"></span> <hr>
+            <span id="modalBirthdate"></span> <hr>
+            <span id="modalAge"></span> <hr>
+            <span id="modalGender"></span> <hr>
+            <span id="modalEmail"></span> <hr>
+            <span id="modalNumber"></span> <hr>
+            <span id="modalCar"></span> <hr>
+            <span id="modalExtra"></span> <hr>
+            <span id="modalQuestion"></span> <hr>
+            <span id="modalPrice"></span> <hr>
+            <button type="submit" class="modalButton">Odoslať mail</button>
+        </div>
+    </div>
+</form>
+</body>
+
+<script src="../javascript/main.js"></script>
+</html>
